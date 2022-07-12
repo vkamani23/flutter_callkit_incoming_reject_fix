@@ -81,12 +81,12 @@ class CallkitIncomingActivity : Activity() {
     private var endedCallkitIncomingBroadcastReceiver = EndedCallkitIncomingBroadcastReceiver()
 
     private lateinit var ivBackground: ImageView
-    private lateinit var llBackgroundAnimation: RippleRelativeLayout
+//    private lateinit var llBackgroundAnimation: RelativeLayout
 
     private lateinit var tvNameCaller: TextView
-    private lateinit var tvNumber: TextView
-    private lateinit var ivLogo: ImageView
-    private lateinit var ivAvatar: CircleImageView
+//    private lateinit var tvNumber: TextView
+//    private lateinit var ivLogo: ImageView
+//    private lateinit var ivAvatar: CircleImageView
 
     private lateinit var llAction: LinearLayout
     private lateinit var ivAcceptCall: ImageView
@@ -166,21 +166,21 @@ class CallkitIncomingActivity : Activity() {
         if (data == null) finish()
 
         tvNameCaller.text = data?.getString(EXTRA_CALLKIT_NAME_CALLER, "")
-        tvNumber.text = data?.getString(EXTRA_CALLKIT_HANDLE, "")
+//        tvNumber.text = data?.getString(EXTRA_CALLKIT_HANDLE, "")
 
-//         val isShowLogo = data?.getBoolean(EXTRA_CALLKIT_IS_SHOW_LOGO, false)
-//         ivLogo.visibility = if (isShowLogo == true) View.VISIBLE else View.INVISIBLE
-
-//         val avatarUrl = data?.getString(EXTRA_CALLKIT_AVATAR, "")
-//         if (avatarUrl != null && avatarUrl.isNotEmpty()) {
-//             ivAvatar.visibility = View.VISIBLE
-//             val headers = data.getSerializable(EXTRA_CALLKIT_HEADERS) as HashMap<String, Any?>
-//             getPicassoInstance(this@CallkitIncomingActivity, headers)
-//                 .load(avatarUrl)
-//                 .placeholder(R.drawable.ic_default_avatar)
-//                 .error(R.drawable.ic_default_avatar)
-//                 .into(ivAvatar)
-//         }
+//        val isShowLogo = data?.getBoolean(EXTRA_CALLKIT_IS_SHOW_LOGO, false)
+//        ivLogo.visibility = if (isShowLogo == true) View.VISIBLE else View.INVISIBLE
+//
+//        val avatarUrl = data?.getString(EXTRA_CALLKIT_AVATAR, "")
+//        if (avatarUrl != null && avatarUrl.isNotEmpty()) {
+//            ivAvatar.visibility = View.VISIBLE
+//            val headers = data.getSerializable(EXTRA_CALLKIT_HEADERS) as HashMap<String, Any?>
+//            getPicassoInstance(this@CallkitIncomingActivity, headers)
+//                .load(avatarUrl)
+//                .placeholder(R.drawable.ic_default_avatar)
+//                .error(R.drawable.ic_default_avatar)
+//                .into(ivAvatar)
+//        }
 
         val callType = data?.getInt(EXTRA_CALLKIT_TYPE, 0) ?: 0
         if (callType > 0) {
@@ -232,15 +232,15 @@ class CallkitIncomingActivity : Activity() {
 
     private fun initView() {
         ivBackground = findViewById(R.id.ivBackground)
-        llBackgroundAnimation = findViewById(R.id.llBackgroundAnimation)
-        llBackgroundAnimation.layoutParams.height =
-            Utils.getScreenWidth() + Utils.getStatusBarHeight(this@CallkitIncomingActivity)
+//        llBackgroundAnimation = findViewById(R.id.llBackgroundAnimation)
+//        llBackgroundAnimation.layoutParams.height =
+//            Utils.getScreenWidth() + Utils.getStatusBarHeight(this@CallkitIncomingActivity)
 //         llBackgroundAnimation.startRippleAnimation()
 
         tvNameCaller = findViewById(R.id.tvNameCaller)
-        tvNumber = findViewById(R.id.tvNumber)
-        ivLogo = findViewById(R.id.ivLogo)
-        ivAvatar = findViewById(R.id.ivAvatar)
+//        tvNumber = findViewById(R.id.tvNumber)
+//        ivLogo = findViewById(R.id.ivLogo)
+//        ivAvatar = findViewById(R.id.ivAvatar)
 
         llAction = findViewById(R.id.llAction)
 
