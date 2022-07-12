@@ -81,7 +81,7 @@ class CallkitIncomingActivity : Activity() {
     private var endedCallkitIncomingBroadcastReceiver = EndedCallkitIncomingBroadcastReceiver()
 
     private lateinit var ivBackground: ImageView
-    private lateinit var llBackgroundAnimation: RippleRelativeLayout
+    private lateinit var llBackgroundAnimation: RelativeLayout
 
     private lateinit var tvNameCaller: TextView
     private lateinit var tvNumber: TextView
