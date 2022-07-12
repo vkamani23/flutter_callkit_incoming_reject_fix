@@ -21,28 +21,35 @@
         android:fitsSystemWindows="false"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvNameCaller"
-            android:layout_marginTop="@dimen/base_margin_revert_x5"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoSizeMaxTextSize="@dimen/size_text_name"
-            android:layout_gravity="bottom"
-            android:autoSizeMinTextSize="12sp"
-            android:autoSizeStepGranularity="2sp"
-            android:autoSizeTextType="uniform"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/size_text_name"
-            app:autoSizeMaxTextSize="@dimen/size_text_name"
-            app:autoSizeMinTextSize="12sp"
-            app:autoSizeStepGranularity="2sp"
-            app:autoSizeTextType="uniform"
-            tools:ignore="MissingPrefix"
-            tools:targetApi="o"
-            tools:text="Caller Name" />
+            android:layout_marginTop="@dimen/base_margin_revert_x5"
+            android:orientation="vertical" >
 
+            <TextView
+                android:id="@+id/tvNameCaller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:autoSizeMaxTextSize="@dimen/size_text_name"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size_text_name"
+                app:autoSizeMaxTextSize="@dimen/size_text_name"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform"
+                tools:ignore="MissingPrefix"
+                tools:targetApi="o"
+                tools:text="Caller Name" />
+    
+        </RelativeLayout>
+        
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
