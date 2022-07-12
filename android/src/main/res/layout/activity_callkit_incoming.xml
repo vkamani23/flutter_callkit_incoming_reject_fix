@@ -123,9 +123,9 @@
                 <com.hiennv.flutter_callkit_incoming.widgets.RippleRelativeLayout
                     android:layout_width="@dimen/size_button_x2_5"
                     android:layout_height="@dimen/size_button_x2_5"
-                    app:ripple_amount="4"
-                    app:ripple_radius="@dimen/base_margin_x1_5"
-                    app:ripple_scale="4.5">
+                    app:ripple_amount="1"
+                    app:ripple_radius="0dp"
+                    app:ripple_scale="0.5">
 
                     <ImageView
                         android:id="@+id/ivDeclineCall"
@@ -168,9 +168,9 @@
                 <com.hiennv.flutter_callkit_incoming.widgets.RippleRelativeLayout
                     android:layout_width="@dimen/size_button_x2_5"
                     android:layout_height="@dimen/size_button_x2_5"
-                    app:ripple_amount="4"
-                    app:ripple_radius="@dimen/base_margin_x1_5"
-                    app:ripple_scale="4.5">
+                    app:ripple_amount="1"
+                    app:ripple_radius="0dp"
+                    app:ripple_scale="0.5">
 
 
                     <ImageView
