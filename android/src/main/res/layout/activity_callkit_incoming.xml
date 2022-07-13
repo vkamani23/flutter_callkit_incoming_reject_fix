@@ -6,33 +6,60 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <ImageView
         android:id="@+id/ivBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0955fa"
-        android:scaleType="centerCrop"
-        tools:ignore="ContentDescription" />
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/image_shadow" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="false"
-        android:orientation="vertical">
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="20dp"
-            android:layout_marginTop="450dp"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="normal"
+                app:autoSizeMaxTextSize="25sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform"
+                tools:ignore="MissingPrefix"
+                tools:targetApi="o"
+                tools:text="Incoming Call" />
 
             <TextView
                 android:id="@+id/tvNameCaller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
                 android:autoSizeMaxTextSize="30sp"
                 android:autoSizeMinTextSize="12sp"
                 android:autoSizeStepGranularity="2sp"
@@ -41,6 +68,7 @@
                 android:maxLines="1"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
+                android:textStyle="bold"
                 app:autoSizeMaxTextSize="30sp"
                 app:autoSizeMinTextSize="12sp"
                 app:autoSizeStepGranularity="2sp"
@@ -48,22 +76,23 @@
                 tools:ignore="MissingPrefix"
                 tools:targetApi="o"
                 tools:text="Caller Name" />
-    
-        </RelativeLayout>
-        
+
+        </LinearLayout>
+
         <Space
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight=".2" />
 
         <LinearLayout
             android:id="@+id/llAction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="0dp"
+            android:layout_gravity="center_horizontal"
             android:fitsSystemWindows="true"
-            android:orientation="horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -71,12 +100,10 @@
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
 
-                <com.hiennv.flutter_callkit_incoming.widgets.RippleRelativeLayout
-                    android:layout_width="@dimen/size_button_x2_5"
-                    android:layout_height="@dimen/size_button_x2_5"
-                    app:ripple_amount="1"
-                    app:ripple_radius="0dp"
-                    app:ripple_scale="1.5">
+                <RelativeLayout
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/white_round_btn">
 
                     <ImageView
                         android:id="@+id/ivDeclineCall"
@@ -85,28 +112,30 @@
                         android:layout_centerInParent="true"
                         android:background="@drawable/bg_button_decline"
                         android:padding="@dimen/base_margin_x1_5"
-                        android:src="@drawable/ic_decline"
+                        android:src="@drawable/cross"
                         tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:id="@+id/tvDecline"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@id/ivDeclineCall"
-                        android:layout_marginBottom="@dimen/base_margin"
-                        android:gravity="center"
-                        android:text="@string/text_decline"
-                        android:textColor="@color/action_text"
-                        android:textSize="@dimen/size_text_action" />
 
-                </com.hiennv.flutter_callkit_incoming.widgets.RippleRelativeLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvDecline"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="@dimen/base_margin"
+                    android:gravity="center"
+                    android:text="@string/text_decline"
+                    android:textColor="#fafafa"
+                    android:textSize="@dimen/size_text_action" />
+
 
             </LinearLayout>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight=".7" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -116,12 +145,10 @@
                 tools:ignore="UseCompoundDrawables">
 
 
-                <com.hiennv.flutter_callkit_incoming.widgets.RippleRelativeLayout
-                    android:layout_width="@dimen/size_button_x2_5"
-                    android:layout_height="@dimen/size_button_x2_5"
-                    app:ripple_amount="1"
-                    app:ripple_radius="0dp"
-                    app:ripple_scale="1.5">
+                <RelativeLayout
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/round_button">
 
 
                     <ImageView
@@ -134,24 +161,30 @@
                         android:src="@drawable/ic_accept"
                         tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:id="@+id/tvAccept"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@id/ivAcceptCall"
-                        android:layout_marginBottom="@dimen/base_margin"
-                        android:gravity="center"
-                        android:text="@string/text_accept"
-                        android:textColor="@color/action_text"
-                        android:textSize="@dimen/size_text_action" />
 
+                </RelativeLayout>
 
-                </com.hiennv.flutter_callkit_incoming.widgets.RippleRelativeLayout>
+                <TextView
+                    android:id="@+id/tvAccept"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/ivAcceptCall"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="@dimen/base_margin"
+                    android:gravity="center"
+                    android:text="@string/text_accept"
+                    android:textColor="#fafafa"
+                    android:textSize="@dimen/size_text_action" />
+
 
             </LinearLayout>
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight=".1" />
     </LinearLayout>
 
 </RelativeLayout>
