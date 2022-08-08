@@ -196,7 +196,7 @@ class CallkitIncomingActivity : Activity() {
         val textDecline = data?.getString(EXTRA_CALLKIT_TEXT_DECLINE, "")
         tvDecline.text = if(TextUtils.isEmpty(textDecline)) getString(R.string.text_decline) else textDecline
 
-        val backgroundColor = data?.getString(EXTRA_CALLKIT_BACKGROUND_COLOR, "#3d3d3d")
+        val backgroundColor = data?.getString(EXTRA_CALLKIT_BACKGROUND_COLOR, "#000000")
         try {
             ivBackground.setBackgroundColor(Color.parseColor(backgroundColor))
         } catch (error: Exception) {
