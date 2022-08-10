@@ -197,16 +197,16 @@ class CallkitIncomingActivity : Activity() {
         tvDecline.text = if(TextUtils.isEmpty(textDecline)) getString(R.string.text_decline) else textDecline
 
         val backgroundColor = data?.getString(EXTRA_CALLKIT_BACKGROUND_COLOR, "#000000")
-        try {
-            ivBackground.setBackgroundColor(Color.parseColor(backgroundColor))
-        } catch (error: Exception) {
-        }
+        //try {
+        //    ivBackground.setBackgroundColor(Color.parseColor(backgroundColor))
+        //} catch (error: Exception) {
+        //}
         val backgroundUrl = data?.getString(EXTRA_CALLKIT_BACKGROUND_URL, "")
         if (backgroundUrl != null && backgroundUrl.isNotEmpty()) {
             val headers = data.getSerializable(EXTRA_CALLKIT_HEADERS) as HashMap<String, Any?>
             getPicassoInstance(this@CallkitIncomingActivity, headers)
                 .load(backgroundUrl)
-                .placeholder(R.drawable.transparent)
+                // .placeholder(R.drawable.transparent)
                 .error(R.drawable.transparent)
                 .into(ivBackground)
         }
